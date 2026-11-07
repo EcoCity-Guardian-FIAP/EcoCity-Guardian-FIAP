@@ -1,5 +1,6 @@
-node_modules/
+**/venv/
+ia/venv/
 __pycache__/
-.env
-.vscode/
 *.pyc
+analytics/ecocity.db
+.idea/
