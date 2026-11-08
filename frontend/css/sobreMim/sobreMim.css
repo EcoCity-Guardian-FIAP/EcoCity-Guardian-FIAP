@@ -1,0 +1,35 @@
+.sobreBg {
+  background-color: var(--p4);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.secaoSobreMim {
+  display: flex;
+  flex-direction: column;
+  padding: 3em;
+  gap: 2.5em;
+}
+
+.sobreConteudo {
+  gap: 16px;
+  display: grid;
+  grid-template-columns: 65ch 65ch;
+  gap: 1.5em;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .secaoSobreMim {
+    grid-template-columns: 1fr;
+  }
+
+  .sobreImagem {
+    padding-left: 4em;
+  }
+
+  .secaoSobreMim img {
+    max-height: 200px;
+  }
+}

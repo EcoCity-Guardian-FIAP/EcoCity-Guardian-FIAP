@@ -1,0 +1,9 @@
+@import "./global/reset.css";
+@import "./global/global.css";
+@import "./global/navbar.css";
+@import "./global/cores.css";
+@import "./global/tipografias.css";
+@import "./cover/cover.css";
+@import "./global/footer.css";
+@import "./cadastro/cadastroAgendamento.css";
+@import "./sobreMim/sobreMim.css"

@@ -1,0 +1,76 @@
+.secaoCover {
+  display: grid;
+  gap: 3em;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1920px;
+  align-items: center;
+}
+
+.secaoCover img {
+  object-fit: cover;
+  width: 100%;
+  background-position: 50% 0;
+  object-position: 50% 0;
+  border-radius: 12px;
+}
+
+.coverDireita {
+  padding: 5em 0;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  padding-right: 3em;
+}
+
+.coverTexto {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.coverTexto h1 {
+  color: var(--p4);
+}
+
+.coverTexto p {
+  color: var(--n5);
+}
+
+.coverBotoes {
+  display: flex;
+  gap: 0.5em;
+}
+
+@media (max-width: 900px) {
+  .secaoCover {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3em;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .secaoCover img {
+    object-fit: contain;
+    max-height: 300px;
+  }
+
+  .secaoCover > * {
+    width: 100%;
+  }
+
+  .coverDireita {
+    padding: 0;
+    max-width: none;
+  }
+
+  .coverTexto {
+    gap: 2em;
+  }
+
+  .coverDireita h1 {
+    text-align: center;
+  }
+}

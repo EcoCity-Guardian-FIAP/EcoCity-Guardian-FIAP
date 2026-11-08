@@ -1,0 +1,87 @@
+body,
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5em;
+}
+
+input,
+select {
+    border-radius: 12px;
+    background-color: var(--n1);
+    border: 1px solid var(--n3);
+    padding: 0.5em 1em;
+}
+
+a {
+    font-family: "figtree", "arial", sans-serif;
+}
+
+.linkNormal {
+    color: var(--p4);
+    text-decoration: underline 2px solid var(--p4);
+}
+
+.linkNormal:hover {
+    color: var(--p3);
+    text-decoration: underline 2px solid var(--p3);
+    transition: 200ms;
+}
+
+.linkBranco {
+    color: var(--n1);
+}
+
+.linkBranco:hover {
+    color: var(--n2);
+    transition: 200ms;
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 3em;
+}
+
+button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 8px;
+    align-items: baseline;
+    max-width: max-content;
+}
+
+.botaoPrimario {
+    background-color: var(--p5);
+    color: var(--n1);
+}
+
+.botaoPrimario:hover {
+    background-color: var(--p4);
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.botaoSecundario {
+    background-color: var(--n1);
+    color: var(--p5);
+}
+
+.botaoSecundario:hover {
+    background-color: var(--n2);
+    cursor: pointer;
+    transition: 200ms;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 1.5em;
+    }
+
+    body,
+    main {
+        gap: 2.5em;
+    }
+}

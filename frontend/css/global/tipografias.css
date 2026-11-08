@@ -1,0 +1,148 @@
+:root {
+  --fonte1--XXL: 700 6rem/1.125 "Figtree", sans-serif;
+  --fonte1--XL: 700 4rem/1.125 "Figtree", sans-serif;
+  --fonte1--L: 700 2.5rem/1.2 "Figtree", sans-serif;
+  --fonte1--M: 700 2rem/1.25 "Figtree", sans-serif;
+  --fonte1--S: 700 1.5rem/1.25 "Figtree", sans-serif;
+  --fonte2--L: 400 1.25rem/1.4 "Roboto", sans-serif;
+  --fonte2--M: 400 1rem/1.5 "Roboto", sans-serif;
+  --fonte2--S: 400 0.75rem/1.5 "Roboto", sans-serif;
+}
+
+h1,
+.fonte1--XXL {
+  font: var(--fonte1--XXL);
+  letter-spacing: -1.5%;
+}
+
+h2,
+.fonte1--XL {
+  font: var(--fonte1--XL);
+  letter-spacing: -0.5%;
+}
+
+h3,
+.fonte1--L {
+  font: var(--fonte1--L);
+  letter-spacing: 0%;
+}
+
+h4,
+.fonte1--M {
+  font: var(--fonte1--M);
+  letter-spacing: 0.15%;
+}
+
+h5,
+.fonte1--S {
+  font: var(--fonte1--S);
+  letter-spacing: 0.15%;
+}
+
+.fonte2--L {
+  font: var(--fonte2--L);
+  letter-spacing: 0.5%;
+}
+
+p,
+label,
+.fonte2--M {
+  font: var(--fonte2--M);
+  letter-spacing: 0.5%;
+}
+
+.fonte2--S {
+  font: var(--fonte2--S);
+  letter-spacing: 0.25%;
+}
+
+.fonteBotao,
+.fonteNav {
+  font: var(--fonte2--M);
+  letter-spacing: 5%;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1300px) {
+  h1,
+  .fonte1--XXL {
+    font: var(--fonte1--XL);
+    letter-spacing: -1.5%;
+  }
+
+  h2,
+  .fonte1--XL {
+    font: var(--fonte1--L);
+    letter-spacing: -0.5%;
+  }
+
+  h3,
+  .fonte1--L {
+    font: var(--fonte1--M);
+    letter-spacing: 0%;
+  }
+
+  h4,
+  .fonte1--M {
+    font: var(--fonte1--S);
+    letter-spacing: 0.15%;
+  }
+
+  h5,
+  .fonte1--S {
+    font: var(--fonte1--S);
+    letter-spacing: 0.15%;
+  }
+
+  /*     .fonte2--L {
+        font: var(--fonte2--M);
+        letter-spacing: 0.5%;
+    }
+
+    p, label,
+    .fonte2--M {
+        font: var(--fonte2--S);
+        letter-spacing: 0.5%;
+    }
+
+    .fonte2--S {
+        font: var(--fonte2--S);
+        letter-spacing: 0.25%;
+    } */
+}
+
+@media (max-width: 600px) {
+  h1,
+  .fonte1--XXL {
+    font: var(--fonte1--L);
+    letter-spacing: -1.5%;
+  }
+
+  h2,
+  .fonte1--XL {
+    font: var(--fonte1--M);
+    letter-spacing: -0.5%;
+  }
+
+  h3,
+  .fonte1--L {
+    font: var(--fonte1--S);
+    letter-spacing: 0%;
+  }
+  .fonte2--L {
+    font: var(--fonte2--M);
+    letter-spacing: 0.5%;
+  }
+
+  p,
+  label,
+  .fonte2--M {
+    font: var(--fonte2--S);
+    letter-spacing: 0.5%;
+  }
+
+  .fonte2--S {
+    font: var(--fonte2--S);
+    letter-spacing: 0.25%;
+  }
+}

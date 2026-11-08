@@ -1,0 +1,40 @@
+.footerBg {
+  background-color: var(--p4);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.secaoFooter {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5em;
+  padding: 4.5em;
+}
+
+.secaoFooter > *:not(:first-child) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  flex: 1;
+}
+
+.secaoFooter > *:first-child {
+  display: grid;
+  gap: 1.5em;
+  max-width: 65ch;
+}
+
+.secaoFooter ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  align-items: start;
+}
+
+@media (max-width: 1400px) {
+  .secaoFooter {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

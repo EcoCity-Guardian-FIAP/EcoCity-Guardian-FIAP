@@ -1,0 +1,55 @@
+.navbarBg {
+  background-color: var(--p4);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  max-width: 1400px;
+  width: 100%;
+  padding: 2em 3em;
+  gap: 5em;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+nav {
+  display: flex;
+  justify-content: right;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2.5em;
+}
+
+nav ul > *:not(:last-child):hover {
+  color: var(--n2);
+}
+
+nav ul a {
+  text-decoration: none;
+  color: var(--n1);
+}
+
+nav ul a:hover {
+  color: var(--n2);
+  text-decoration: none;
+  transition: 200ms;
+}
+
+@media (max-width: 1400px) {
+  .navbar {
+    grid-template-columns: 1fr;
+    gap: 3em;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
