@@ -1,31 +1,17 @@
-.cadastroAgendamento {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.secaoRelato {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   gap: 3em;
 }
 
-.secaoCadastro,
-.secaoAgendamento {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5em;
-}
-
-.cadastroTitulos {
+.relatoTitulos {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
 }
 
-.agendamentoTitulos {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-}
-
-.formHome {
+.formRelato {
   display: grid;
   gap: 1em;
   grid-template-columns: max-content 1fr;
@@ -38,14 +24,14 @@
     grid-template-columns: 1fr;
   }
 
-  .secaoCadastro,
+  .secaoRelato,
   .secaoAgendamento {
     gap: 1.5em;
   }
 }
 
 @media (max-width: 400px) {
-  .formHome {
+  .formRelato {
     grid-template-columns: 1fr;
     text-align: left;
     gap: 0.5em;

@@ -8,7 +8,6 @@
 .secaoSobreMim {
   display: flex;
   flex-direction: column;
-  padding: 3em;
   gap: 2.5em;
 }
 

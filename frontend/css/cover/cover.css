@@ -3,25 +3,20 @@
   gap: 3em;
   width: 100%;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 1920px;
+  max-width: 1400px;
   align-items: center;
 }
 
 .secaoCover img {
-  object-fit: cover;
-  width: 100%;
-  background-position: 50% 0;
-  object-position: 50% 0;
-  border-radius: 12px;
+  place-self: center;
+  width: 75%;
 }
 
 .coverDireita {
-  padding: 5em 0;
   max-width: 680px;
   display: flex;
   flex-direction: column;
   gap: 3em;
-  padding-right: 3em;
 }
 
 .coverTexto {
