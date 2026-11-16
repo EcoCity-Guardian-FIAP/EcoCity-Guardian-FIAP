@@ -7,11 +7,20 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
 from database import init_db, salvar_analise
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="EcoCity Guardian - Local LLM Engine",
     description="Motor Cognitivo de Triagem com LLM Local (Ollama) e Fallback Heurístico.",
     version="2.0.0"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Permite requisições do Front-end
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 init_db()
@@ -127,7 +136,7 @@ def analisar_ocorrencia(payload: OcorrenciaRequest):
         resultado_ia["nivel_risco"],
         resultado_ia["prioridade_atendimento"],
         tempo_execucao,
-        datetime.now().isoformat()gi
+        datetime.now().isoformat()
     )
 
     return AnáliseIAResponse(
