@@ -29,10 +29,6 @@
   color: var(--p4);
 }
 
-.coverTexto p {
-  color: var(--n5);
-}
-
 .coverBotoes {
   display: flex;
   gap: 0.5em;

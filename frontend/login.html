@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCity Guardian | Entrar</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <script src="./js/api.js" defer></script>
+    <script src="./js/login.js" defer></script>
+</head>
+
+<body>
+    <header class="navbarBg">
+        <div class="navbar"><a href="index.html"><img src="./img/svg/Logo.svg" alt="EcoCity Guardian"></a>
+            <nav>
+                <ul class="fonteNav n1">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="alertas.html">Alertas</a></li>
+                </ul>
+            </nav>
+            <div class="navbar-extra"><a href="index.html">Voltar ao início</a></div>
+        </div>
+    </header>
+    <main>
+        <section class="auth-layout">
+            <div class="auth-aside">
+                <h1>A cidade também é feita por quem cuida dela.</h1>
+                <p>Entre para registrar ocorrências e acompanhar sua contribuição. Contas de demonstração de cidadão e gestor estão disponíveis nesta versão do projeto.</p>
+                <p><strong>EcoCity Guardian</strong><br>Prevenção, informação e participação urbana.</p>
+            </div>
+            <div class="auth-card">
+                <h2>Acessar a plataforma</h2>
+                <form id="login-form" class="form-stack"><label for="email">E-mail</label><input type="email" id="email" name="email" placeholder="voce@email.com" autocomplete="username" required><label for="password">Senha</label><input type="password" id="password" name="password" placeholder="Digite sua senha" autocomplete="current-password" required>
+                    <div id="login-feedback" aria-live="polite"></div><button type="submit" class="botaoPrimario">Entrar</button>
+                </form>
+                <div class="demo-access">
+                    <p><strong>Acesso de teste</strong> — use uma das contas abaixo para preencher o formulário de login.</p>
+                    <div class="demo-buttons"><button type="button" data-demo="user">Preencher cidadão</button><button type="button" data-demo="admin">Preencher gestor</button></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footerBg n1">
+        <div class="secaoFooter container fonte2--M">
+            <div><img src="./img/svg/Logo.svg" alt="EcoCity Guardian">
+                <p>Plataforma de demonstração acadêmica.</p>
+            </div>
+            <div>
+                <h5>Páginas</h5>
+                <ul>
+                    <li><a href="index.html" class="linkBranco">Home</a></li>
+                    <li><a href="alertas.html" class="linkBranco">Alertas</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Acesso de teste</h5>
+                <ul>
+                    <li>admin@ecocity.local</li>
+                    <li>cidadao@ecocity.local</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

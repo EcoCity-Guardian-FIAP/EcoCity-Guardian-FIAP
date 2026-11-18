@@ -1,10 +1,12 @@
-.idea/
 **/venv/
-**/.venv/
+ia/venv/
 __pycache__/
-*.py[cod]
-.pytest_cache/
-**/.env
+*.pyc
 analytics/ecocity.db
+.idea/ia/.env
 ia/uploads/*
 !ia/uploads/.gitkeep
+
+**/.venv/
+.pytest_cache/
+ia/.pytest_cache/

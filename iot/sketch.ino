@@ -7,7 +7,8 @@ const char* ssid = "Wokwi-GUEST";
 const char* password = "";
 
 // Endereço da API de IA (Se rodar localmente no Wokwi, use o ngrok ou IP público da máquina)
-const char* serverUrl = "http://SEU_IP_LOCAL:8000/api/v1/analisar-ocorrencia";
+const char* serverUrl = "http://SEU_IP_OU_TUNNEL:8000/api/v1/telemetria";
+const char* sensorApiKey = "ecocity-iot-demo-key";
 
 // Pinos do Sensor HC-SR04
 const int TRIG_PIN = 5;
@@ -62,9 +63,11 @@ void enviarTelemetriaParaIA(float nivel_agua) {
     HTTPClient http;
     http.begin(serverUrl);
     http.addHeader("Content-Type", "application/json");
+    http.addHeader("X-Sensor-Token", sensorApiKey);
 
     StaticJsonDocument<200> doc;
-    doc["cidadao_id"] = "SENSOR-IOT-ESP32-01";
+    doc["sensor_id"] = "ESP32-01";
+    doc["localizacao"] = "Bueiro 12, Moema, São Paulo";
     doc["descricao"] = "Alerta automático: elevação crítica do nível de água detectada pelo sensor IoT no Bueiro 12.";
     doc["nivel_sensor_agua_cm"] = nivel_agua;
 

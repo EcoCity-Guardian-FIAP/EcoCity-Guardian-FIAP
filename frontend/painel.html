@@ -1,62 +1,126 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoCity Guardian | Painel do Cidadão</title>
+    <title>EcoCity Guardian | Painel do Gestor</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <script src="./js/api.js" defer></script>
+    <script src="./js/gestor.js" defer></script>
 </head>
 
 <body>
     <header class="navbarBg">
-        <div class="navbar">
-            <a href="index.html"><img src="./img/svg/Logo.svg" alt=""></a>
+        <div class="navbar"><a href="index.html"><img src="./img/svg/Logo.svg" alt="EcoCity Guardian"></a>
             <nav>
                 <ul class="fonteNav n1">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="relatos.html">Envio de Relatos</a></li>
-                    <li><a href="painel.html">Painel do Cidadão</a></li>
-                    <li><a href="visaoGeral.html">Visão Geral</a></li>
+                    <li><a href="alertas.html">Alertas</a></li>
+                    <li><a href="painel.html">Painel do Gestor</a></li>
+                    <li><a href="relatos.html">Registrar relato</a></li>
                 </ul>
             </nav>
+            <div class="navbar-extra"><button class="botaoPrimario" data-logout hidden>Sair</button></div>
         </div>
     </header>
     <main>
-
+        <section class="dashboard-shell">
+            <div class="dashboard-top">
+                <div>
+                    <h1>Painel do Gestor</h1>
+                    <p>Consulte, edite e exclua os relatos enviados pelos usuários.</p>
+                </div><button id="refresh-reports" type="button" class="botaoSecundario">Atualizar dados</button>
+            </div>
+            <div class="dashboard-metrics">
+                <div class="metric-card"><span>Total de relatos</span><strong id="metric-total">—</strong></div>
+                <div class="metric-card"><span>Prioridade alta / risco 4–5</span><strong id="metric-high">—</strong></div>
+                <div class="metric-card"><span>Em aberto</span><strong id="metric-open">—</strong></div>
+                <div class="metric-card"><span>Resolvidos</span><strong id="metric-done">—</strong></div>
+            </div>
+            <div id="manager-feedback" aria-live="polite"></div>
+            <section class="panel-card">
+                <div class="filters">
+                    <div><label for="search-reports">Buscar</label><input id="search-reports" type="search" placeholder="Usuário, endereço, texto ou ID"></div>
+                    <div><label for="priority-filter">Prioridade</label><select id="priority-filter">
+                            <option value="">Todas</option>
+                            <option>ALTA - Emergência</option>
+                            <option>ALTA</option>
+                            <option>MÉDIA</option>
+                            <option>BAIXA</option>
+                        </select></div>
+                    <div><label for="status-filter">Status</label><select id="status-filter">
+                            <option value="">Todos</option>
+                            <option>Recebido</option>
+                            <option>Em análise</option>
+                            <option>Em atendimento</option>
+                            <option>Resolvido</option>
+                            <option>Arquivado</option>
+                        </select></div>
+                    <div><span class="form-hint">Apenas administradores podem alterar dados.</span></div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Data</th>
+                                <th>Usuário</th>
+                                <th>Local</th>
+                                <th>Categoria</th>
+                                <th>Risco</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reports-body">
+                            <tr>
+                                <td colspan="8" class="table-message">Carregando...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
     </main>
+    <dialog id="edit-dialog">
+        <h2>Editar relato</h2>
+        <form id="edit-form" class="form-stack"><input type="hidden" id="edit-id"><label for="edit-location">Localização</label><input id="edit-location" maxlength="255" required><label for="edit-description">Descrição</label><textarea id="edit-description" maxlength="2000" required></textarea><label for="edit-status">Status do atendimento</label><select id="edit-status">
+                <option>Recebido</option>
+                <option>Em análise</option>
+                <option>Em atendimento</option>
+                <option>Resolvido</option>
+                <option>Arquivado</option>
+            </select>
+            <div class="dialog-actions"><button type="button" id="close-edit" class="botaoSecundario">Cancelar</button><button type="submit" class="botaoPrimario">Salvar alterações</button></div>
+        </form>
+    </dialog>
     <footer class="footerBg n1">
         <div class="secaoFooter container fonte2--M">
-            <div>
-                <img src="./img/svg/logo.svg" alt="">
-                <p>
-                    Plataforma web integrada para prevenção de enchentes e zeladoria urbana corporativa com IoT, IA e Big Data
-                </p>
+            <div><img src="./img/svg/Logo.svg" alt="EcoCity Guardian">
+                <p>Painel administrativo demonstrativo do EcoCity Guardian.</p>
             </div>
             <div>
                 <h5>Páginas</h5>
                 <ul>
                     <li><a href="index.html" class="linkBranco">Home</a></li>
-                    <li><a href="relatos.html" class="linkBranco">Envio de Relatos</a></li>
-                    <li><a href="painel.html" class="linkBranco">Painel do Cidadão</a></li>
-                    <li><a href="visaoGeral.html" class="linkBranco">Visão Geral</a></li>
+                    <li><a href="alertas.html" class="linkBranco">Alertas</a></li>
+                    <li><a href="relatos.html" class="linkBranco">Enviar relato</a></li>
                 </ul>
             </div>
             <div>
-                <h5>Contato</h5>
+                <h5>Permissões</h5>
                 <ul>
-                    <li>Rua das Laranjeiras, 302 - Moema, São Paulo - SP, 05634-060</li>
-                    <li>contato@ecocity.com</li>
-                    <li>0800 579 6530</li>
+                    <li>Visualização geral</li>
+                    <li>Edição e exclusão de relatos</li>
                 </ul>
             </div>
         </div>
     </footer>
-    <script src="./js/app.js"></script>
 </body>
 
 </html>

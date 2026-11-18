@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCity Guardian | Alertas</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <script src="./js/api.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+    <script src="./js/alertas.js" defer></script>
+</head>
+
+<body>
+    <header class="navbarBg">
+        <div class="navbar"><a href="index.html"><img src="./img/svg/Logo.svg" alt="EcoCity Guardian"></a>
+            <nav>
+                <ul class="fonteNav n1">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="alertas.html">Alertas</a></li>
+                    <li><a data-link-report href="login.html">Enviar relato</a></li>
+                    <li><a data-link-manager href="painel.html" hidden>Painel do Gestor</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="dashboard-shell">
+            <div class="page-intro">
+                <h1>Alertas e situação da cidade</h1>
+                <p>Mapa demonstrativo de pontos de atenção relacionados a alagamentos e zeladoria urbana.</p>
+            </div>
+            <div class="demo-warning"><strong>Atenção:</strong> os pontos, níveis de água e status exibidos nesta tela são dados simulados para demonstração acadêmica. Ainda não há integração com sensores IoT, Defesa Civil ou fontes oficiais em tempo real.</div>
+            <div class="alert-summary">
+                <div class="metric-card"><span>Pontos no mapa</span><strong id="alert-total">—</strong></div>
+                <div class="metric-card"><span>Risco alto</span><strong id="alert-high">—</strong></div>
+                <div class="metric-card"><span>Atenção moderada</span><strong id="alert-medium">—</strong></div>
+                <div class="metric-card"><span>Condição estável</span><strong id="alert-low">—</strong></div>
+            </div>
+            <div class="panel-card">
+                <div class="dashboard-top">
+                    <div>
+                        <h2 id="city-status">Carregando status...</h2>
+                        <p id="alerts-updated">Buscando informações da API...</p>
+                    </div><span class="form-hint" id="alerts-source"></span>
+                </div>
+                <p id="map-message" aria-live="polite"></p>
+                <div class="map-layout">
+                    <div id="alert-map" role="application" aria-label="Mapa interativo com pontos simulados de alerta"></div>
+                    <div>
+                        <h2 style="font:var(--fonte1--S);color:var(--p5);margin:0 0 .8rem">Alertas registrados</h2>
+                        <div id="alert-list" class="alert-list"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footerBg n1">
+        <div class="secaoFooter container fonte2--M">
+            <div><img src="./img/svg/Logo.svg" alt="EcoCity Guardian">
+                <p>Informação territorial para apoiar prevenção e zeladoria urbana.</p>
+            </div>
+            <div>
+                <h5>Páginas</h5>
+                <ul>
+                    <li><a href="index.html" class="linkBranco">Home</a></li>
+                    <li><a data-link-report href="login.html" class="linkBranco">Enviar relato</a></li>
+                    <li><a data-link-manager href="painel.html" class="linkBranco" hidden>Painel do Gestor</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Fonte</h5>
+                <ul>
+                    <li>Dados de demonstração</li>
+                    <li>Mapa base: OpenStreetMap</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

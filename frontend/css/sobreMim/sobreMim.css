@@ -12,10 +12,9 @@
 }
 
 .sobreConteudo {
-  gap: 16px;
   display: grid;
   grid-template-columns: 65ch 65ch;
-  gap: 1.5em;
+  gap: 3em;
   justify-content: center;
 }
 

@@ -13,7 +13,16 @@ textarea {
   background-color: var(--n1);
   border: 1px solid var(--n3);
   padding: 0.5em 1em;
+}
+
+select,
+textarea {
   font: inherit;
+}
+
+input,
+textarea {
+  font: var(--fonte2--M);
 }
 
 a {
@@ -52,6 +61,8 @@ button {
   border-radius: 8px;
   align-items: baseline;
   max-width: max-content;
+  font: var(--fonte2--M);
+  text-transform: uppercase;
 }
 
 .botaoPrimario {
@@ -68,12 +79,17 @@ button {
 .botaoSecundario {
   background-color: var(--n1);
   color: var(--p5);
+  box-shadow: inset 0 0 0 2px var(--p5);
 }
 
 .botaoSecundario:hover {
   background-color: var(--n2);
   cursor: pointer;
   transition: 200ms;
+}
+
+p {
+  max-width: 65ch;
 }
 
 @media (max-width: 600px) {
