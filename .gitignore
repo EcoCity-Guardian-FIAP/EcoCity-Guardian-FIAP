@@ -3,7 +3,7 @@ ia/venv/
 __pycache__/
 *.pyc
 analytics/ecocity.db
-.idea/ia/.env
+**/.env
 ia/uploads/*
 !ia/uploads/.gitkeep
 

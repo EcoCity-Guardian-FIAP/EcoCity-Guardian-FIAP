@@ -2,6 +2,16 @@
 
 Plataforma web para prevenção de enchentes e zeladoria urbana colaborativa.
 
+## Integrantes
+
+- Gabriel Alves Maia Rodrigues RM:551397
+- Thiago Pontes Wenzel RM: 550840
+- Luana Cristina de Siqueira RM: 97822
+
+## Vídeo-Pitch
+
+https://www.youtube.com/watch?v=5XOaxh5SRz4
+
 ## Execução e configuração
 
 ### 1. Iniciar o backend (API)

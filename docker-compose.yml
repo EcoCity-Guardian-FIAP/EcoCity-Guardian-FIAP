@@ -1,0 +1,41 @@
+services:
+  ia-api:
+    build:
+      context: ./ia
+      dockerfile: Dockerfile
+    container_name: ecocity_ia_api
+    ports:
+      - "8000:8000"
+    environment:
+      - OLLAMA_URL=http://host.docker.internal:11434
+      - DB_PATH=/app/analytics/ecocity.db
+    volumes:
+      - ./analytics:/app/analytics
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  analytics:
+    build:
+      context: ./analytics
+      dockerfile: Dockerfile
+    container_name: ecocity_analytics
+    entrypoint: ["streamlit", "run", "dashboard.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./analytics:/app
+    depends_on:
+      - ia-api
+    restart: unless-stopped
+
+  frontend:
+    image: nginx:alpine
+    container_name: ecocity_frontend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+    depends_on:
+      - ia-api
+    restart: unless-stopped
